@@ -1,0 +1,10 @@
+{% extends "shortener/base.html" %}
+{% block content %}
+ 
+ <form method="POST" action="">
+ {% csrf_token %}
+ <p>Enter URL &nbsp&nbsp&nbsp&nbsp: <input type="text" name="http_url"/>
+ <input type="submit" value="Generate"/>
+</form>
+
+{% endblock %}
