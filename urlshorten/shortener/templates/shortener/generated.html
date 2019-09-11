@@ -1,9 +1,22 @@
 {% extends "shortener/base.html" %}
 {% block content %}
-<p>Submitted URL : <input type="text" value={{full_url}}/></p>
-<p>Shorten URL&nbsp&nbsp&nbsp&nbsp&nbsp: <input type="text" value={{short_url}}/>
-<a href ={{full_url}}><button>GO!</button></a>
-</p>
-<br>
-<a href ="{% url 'shortener:home' %}"><button>Generate another !</button></a>
+	  <form >
+	    <div class="form-group">
+	      <label for="sub_url">Submitted URL : </label>
+	      <input type="text" class="form-control" id="sub_url" value={{full_url}}/>
+	    </div>
+	    <div class="form-group">
+	      <label for="sho_url">Shorten URL :</label>
+	     	<div class="input-group">
+				<input type="text" class="form-control" id="sho_url" value={{short_url}}>
+				<span class="input-group-btn">
+					<a href ={{full_url}}>
+						<button class="btn btn-success" type="button">Go!</button>
+					</a>
+				</span>
+		 	</div>
+	    </div>
+	  </form>
+	  <a href ="{% url 'shortener:home' %}"><button class="btn btn-success btn-block" type="button">Generate another !</button></a>
+
 {% endblock %}

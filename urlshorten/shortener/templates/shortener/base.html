@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1><a href="{% url 'shortener:home' %}">URL Shortner</a></h1>
+<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color :#e3e3e3" >
+	<div style="margin-bottom:50px">
+	<nav style="background-color :#4d6d9a" class="navbar navbar-light " style="margin-bottom:100px">
+	  <div class="container-fluid ">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" style="color: white;" href="{% url 'shortener:home' %}" title="Want to shorten link!"><strong>URL Shortner</strong></a></div></div>
+	</nav>
+	</div>
+	<div class="container">
 {% block content %}
   
 {% endblock %}
+	</div>
+	<div class="navbar-light navbar container-fluid" style="margin-top:400px;background-color :#4d6d9a;margin-bottom:0px;color:white"><br>
+	<p><strong>Contact Us At &nbsp&nbsp&nbsp&nbsp- </strong>&nbsp&nbsp&nbsp&nbsp
+    <a style="color: white;" href="https://twitter.com/piyush_khanna_"><strong>Twitter</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a style="color: white;" href="https://github.com/PiyushKhanna30"><strong>GitHub</strong></a></p>
+    <br/>
+    <p style="color: white;font-size: 0.9rem;" class="col-6"></strong>© 2019 Piyush Khanna.</strong></p>
+  </div>
 </body>
 </html>
