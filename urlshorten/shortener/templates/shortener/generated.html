@@ -1,5 +1,9 @@
 {% extends "shortener/base.html" %}
 {% block content %}
 <p>Submitted URL : <input type="text" value={{full_url}}/></p>
-<p>Shorten URL&nbsp&nbsp&nbsp&nbsp&nbsp: <input type="text" value={{short_url}}/></p>
+<p>Shorten URL&nbsp&nbsp&nbsp&nbsp&nbsp: <input type="text" value={{short_url}}/>
+<a href ={{full_url}}><button>GO!</button></a>
+</p>
+<br>
+<a href ="{% url 'shortener:home' %}"><button>Generate another !</button></a>
 {% endblock %}
