@@ -6,8 +6,13 @@
 {% csrf_token %}	  	
 	    <div class="form-group">
 	      <label for="usr">Enter URL :</label>
-	      <input type="text" class="form-control" id="usr" name="http_url"/>
+	      <input type="url" class="form-control" id="usr" name="http_url" placeholder="https://www.facebook.com" required=True />
 	    </div>
-	      <button type="submit" class="btn btn-success btn-block">Generate</button>
+	      <button style="margin-top:30px" type="submit" class="btn btn-success btn-block">Generate</button>
 	  </form>
+	  {% if response_data %}
+	    <div style="margin-top:30px" class="alert alert-info">
+		    <strong>Info!</strong> {{response_data}}
+		</div>
+	  {% endif %}   
 {% endblock %}
