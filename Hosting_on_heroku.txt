@@ -1,0 +1,41 @@
+- Copy the project say "urlshorten" seperately in folder name say "Publish"
+- Go to 'Getting Started on Heroku with Python'
+- Create an Heroku account
+- install pipenv
+	[on cmd inside "Publish": pip install pipenv]
+- Install git ( check git --version) (or download from website above)
+- Install Heroku CLI(from website above)
+- login heroku from cmd
+	[on cmd inside "Publish/urlshorten" : heroku login]
+- Create a virtual enviroment
+	[on cmd inside "Publish" : virtualenv .
+				 : .\Scripts\activate]
+- Run manage.py not gonna run - pip freeze nothing installing
+- Check which version django and other dependancies install for "urlshorten"
+	 [on cmd inside "Publish/urlshorten" : pip install django==version]
+- Run manage.py and then stop it
+- Go to django heroku
+- Create a Procfile inside "urlshorten" and add to it web:gunicorn urlshorten.wsgi. Then
+	[on cmd inside "Publish/urlshorten" : pip install django-heroku
+					    : pip install guincorn ]
+- Add stuff to settings.py file i.e.(import django-heroku,django_heroku.settings(locals()) )
+- Now to let heroku know about your projects dependancies.
+	[on cmd inside "Publish/urlshorten" : pip freeze > requirements.txt]
+- Now create your to create an app on heroku. (advice : use your project name )
+	[on cmd inside "Publish/urlshorten" : heroku create APPNAME ]
+- Now on cmd 
+	[on cmd inside "Publish/urlshorten" : git init
+					      git status
+					      git add .
+					      git commit - m "first commit"
+					      heroku git:remote -a APPNAME
+					      git push heroku master ]	
+- Open up the website as "APPNAME.herokuapp.com" and open "APPNAME.herokuapp.com/admin" you see error.
+- Back on cmd
+	[on cmd inside "Publish/urlshorten" : heroku run bash. 
+					      ls
+					      python manage.py migrate
+					      python manage.py createsuperuser
+					      exit() ]
+- Congratulations successfully hosted project.
+- Now say if you need to do some updations repeat steps fro git status commands.
