@@ -39,3 +39,5 @@
 					      exit() ]
 - Congratulations successfully hosted project.
 - Now say if you need to do some updations repeat steps fro git status commands.
+
+see my first hosted project - https://clipmyurl.herokuapp.com
