@@ -50,4 +50,6 @@ def get_short_code():
 		except:
 			return short_id
 
-
+#Some useful links
+#http://www.learningaboutelectronics.com/Articles/How-to-insert-data-into-a-database-from-an-HTML-form-in-Django.php/
+#url validation - https://stackoverflow.com/questions/7160737/python-how-to-validate-a-url-in-python-malformed-or-not
