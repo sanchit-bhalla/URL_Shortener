@@ -5,13 +5,17 @@ import string,random
 from django.conf import settings
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
-
+import re
 
 def shorten_url(request):
 	response_data = {}
 	if request.method == 'POST':
 		http_url=request.POST.get('http_url')
 		if request.POST.get('http_url'):
+			x = re.search("^http://127.0.0.1:8000/*[a-z 0-9 A-Z]*$", http_url)
+			if(x!=None):
+				e="Please enter a valid url."
+				return render(request=request,template_name='shortener/index.html',context={'response_data':e})
 			val = URLValidator()
 			try:
 				val(http_url)
@@ -28,6 +32,9 @@ def shorten_url(request):
 			except ValidationError:
 				e="Please enter a valid url."
 				return render(request=request,template_name='shortener/index.html',context={'response_data':e})
+		else:
+			e="Please enter a url."
+			return render(request=request,template_name='shortener/index.html',context={'response_data':e})
 	return render(request=request,template_name='shortener/index.html',context={'response_data':None})
 
 def get_url(request,short_id):
@@ -38,7 +45,7 @@ def get_url(request,short_id):
 		temp2.save()
 		return redirect(url)
 	except:
-		return HttpResponse("Error rendering")
+		return HttpResponse("<h1>INVALID REQUEST!!!</h1>")
 
 def get_short_code():
 	length=6

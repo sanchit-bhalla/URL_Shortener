@@ -2,7 +2,7 @@
 {% block content %}
  
 
-	  <form method="POST">
+	  <form method="POST" id="theForm" onSubmit="return validateTextbox();">
 {% csrf_token %}	  	
 	    <div class="form-group">
 	      <label for="usr">Enter URL :</label>
