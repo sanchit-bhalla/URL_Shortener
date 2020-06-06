@@ -1,7 +1,7 @@
 function validateTextbox() 
 {
 	 var box = document.getElementById("usr");
-	 var re=/http:\/\/127.0.0.1:8000\//;
+	 var re=/http:\/\/127.0.0.1:8000\/*[a-z 0-9 A-Z]*/i;
 	 if (re.test(box.value))
 	 {
 		 box.focus();
