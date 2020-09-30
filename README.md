@@ -1,6 +1,6 @@
 # URL_Shortener 
 The URL_Shortener is prepared using: 
-> django 
+> django framework, 
 > html5,css3
 > Bootstrap 3
 
